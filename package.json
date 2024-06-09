@@ -1,0 +1,39 @@
+{
+  "name": "tsxtension",
+  "version": "1.0.0",
+  "description": "",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "bin": {
+    "tsxtension": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/cli/index.ts --dts --sourcemap --format cjs",
+    "build:dev": "npm run build  -- --watch --onSuccess \"npm link\" ",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.1",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0", 
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "esbuild": "^0.21.4"
+  }
+}
